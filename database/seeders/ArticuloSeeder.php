@@ -1,9 +1,11 @@
 <?php
 
-namespace Database\Seeders;
+//namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
+use Illuminate\Support\Facades\DB;
 
 class ArticuloSeeder extends Seeder
 {
@@ -14,6 +16,6 @@ class ArticuloSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
     }
 }

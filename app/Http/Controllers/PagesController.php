@@ -2,24 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Articulo;
+use Database\Seeders\ArticuloSeeder;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     public function index()
     {
-        return view('articulos1');
+        $articulos = Articulo::where('clasificacion','=',0)->get();
+        return view('articulos', compact('articulos'));
     }
     public function art1()
     {
-        return view('articulos1');
+        $articulos = Articulo::where('clasificacion','=',0)->get();
+        return view('articulos', compact('articulos'));
     }
     public function art2()
     {
-        return view('articulos2');
+        $articulos = Articulo::where('clasificacion','=',1);
+        return view('articulos', compact('articulos'));
+
     }
     public function art3()
     {
-        return view('articulos3');
+        return view('articulos');
     }
 }

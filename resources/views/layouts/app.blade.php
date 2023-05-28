@@ -18,7 +18,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="sticky-top navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -75,6 +75,16 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <hr>
+        <div class="fixed bottom ">
+            <footer class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
+                <div><a href="{{ url('mailto:mauriciolucero@gmail.com')}}">ML</a> &copy; 2023 - 
+                Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+            </div>
+              </footer>
+            </div>
+
+
     </div>
 </body>
 </html>

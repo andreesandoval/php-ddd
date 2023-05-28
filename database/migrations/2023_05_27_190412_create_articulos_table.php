@@ -20,6 +20,8 @@ return new class extends Migration
             $table->integer('precio');
             $table->string('modelo');
             $table->integer('descuentoPromocional');
+            $table->string('descripcion');
+            $table->integer('clasificacion');
             $table->timestamps();
         });
     }

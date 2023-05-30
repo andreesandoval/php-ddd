@@ -22,17 +22,13 @@ class AdaptersServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(ICartRepository::class, function (Application $app) {
-            return new CartRepository();
-        });
+        $this->app->bind(ICartRepository::class, CartRepository::class);
+
+        $this->app->bind(IOrderRepository::class, OrderRepository::class);
 
         $this->app->bind(ICartService::class, function (Application $app) {
             return new CartService($app->make(ICartRepository::class));
-        });
-
-        $this->app->bind(IOrderRepository::class, function (Application $app) {
-            return new OrderRepository();
-        });
+        });        
 
         $this->app->bind(IOrderService::class, function (Application $app) {
             return new OrderService($app->make(IOrderRepository::class));

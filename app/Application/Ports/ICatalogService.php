@@ -2,7 +2,7 @@
 
 namespace App\Application\Ports;
 
-use App\Application\GetAllProductsQuery;
+use App\Application\Queries\GetAllProductsQuery;
 
 interface ICatalogService
 {

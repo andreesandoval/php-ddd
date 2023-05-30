@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Application;
+namespace App\Application\Adapters;
 
 use App\Application\Ports\ICatalogService;
+use App\Application\Queries\GetAllProductsQuery;
 use App\Domain\Ports\ICatalogRepository;
 
 class CatalogService implements ICatalogService

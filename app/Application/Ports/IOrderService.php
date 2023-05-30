@@ -1,10 +1,11 @@
 <?php
+
 namespace App\Application\Ports;
 
-use App\Application\CompleteOrderCommand;
+use App\Application\Commands\CompleteOrderCommand;
 
-interface IOrderService {
+interface IOrderService
+{
 
     public function completeOrder(CompleteOrderCommand $completeOrderCommand);
-
 }

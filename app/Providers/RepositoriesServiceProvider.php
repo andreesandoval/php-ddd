@@ -5,9 +5,9 @@ namespace App\Providers;
 use App\Domain\Ports\ICartRepository;
 use App\Domain\Ports\ICatalogRepository;
 use App\Domain\Ports\IOrderRepository;
-use App\Infrastructure\CartRepository;
-use App\Infrastructure\CatalogRepository;
-use App\Infrastructure\OrderRepository;
+use App\Infrastructure\Adapters\CartRepository;
+use App\Infrastructure\Adapters\CatalogRepository;
+use App\Infrastructure\Adapters\OrderRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoriesServiceProvider extends ServiceProvider

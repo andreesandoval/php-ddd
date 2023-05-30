@@ -1,10 +1,11 @@
 <?php
+
 namespace App\Application\Ports;
 
-use App\Application\AddItemToCartCommand;
+use App\Application\Commands\AddItemToCartCommand;
 
-interface ICartService {
+interface ICartService
+{
 
     public function addItemToCart(AddItemToCartCommand $addItemToCartCommand);
-
 }

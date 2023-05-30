@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Infrastructure;
+namespace App\Infrastructure\Adapters;
 
 use App\Domain\Ports\ICatalogRepository;
 

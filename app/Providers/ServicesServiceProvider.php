@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use App\Application\CartService;
-use App\Application\CatalogService;
-use App\Application\OrderService;
+use App\Application\Adapters\CartService;
+use App\Application\Adapters\CatalogService;
+use App\Application\Adapters\OrderService;
 use App\Application\Ports\ICartService;
 use App\Application\Ports\ICatalogService;
 use App\Application\Ports\IOrderService;

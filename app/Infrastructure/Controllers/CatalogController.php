@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Infrastructure;
+namespace App\Infrastructure\Controllers;
 
 use App\Application\Ports\ICatalogService;
 use Illuminate\Http\Request;

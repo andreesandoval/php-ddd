@@ -1,11 +1,18 @@
 <?php
 namespace App\Application;
 
-use App\Domain\OrderRepository;
+use App\Application\Ports\IOrderService;
+use App\Domain\Ports\IOrderRepository;
 
-class OrderService {
+class OrderService implements IOrderService {
 
-    public function __construct(OrderRepository $orderRepository) {
+    private IOrderRepository $orderRepository;
+
+    public function __construct(IOrderRepository $orderRepository) {
+        $this->orderRepository = $orderRepository;
+    }
+
+    public function completeOrder(CompleteOrderCommand $completeOrderCommand) {
 
     }
 

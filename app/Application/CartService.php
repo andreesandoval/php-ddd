@@ -1,12 +1,26 @@
 <?php
 namespace App\Application;
 
-use App\Domain\CartRepository;
+use App\Application\Ports\ICartService;
+use App\Domain\CartItem;
+use App\Domain\Ports\ICartRepository;
 
-class CartService {
+class CartService implements ICartService {
 
-    public function __construct(CartRepository $cartRepository) {
+    public ICartRepository $cartRepository;
 
+    public function __construct(ICartRepository $cartRepository) {
+        $this->cartRepository = $cartRepository;
+    }
+
+    public function addItemToCart(AddItemToCartCommand $addItemToCartCommand) {
+
+        $product = $addItemToCartCommand->product;
+        $quantity = $addItemToCartCommand->quantity;
+        
+        $cartItem = new CartItem($product->productId, $product->price, $quantity);
+
+        $this->cartRepository->addItem($cartItem);
     }
 
 }

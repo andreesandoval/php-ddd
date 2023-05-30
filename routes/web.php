@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Auth::routes();
+//Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home',       [App\Http\Controllers\PagesController::class, 'index'])->name('home');
@@ -28,3 +28,6 @@ Route::get('/articulos2', [App\Http\Controllers\PagesController::class, 'art2'])
 Route::get('/articulos3', [App\Http\Controllers\PagesController::class, 'art3'])->name('articulos3');
 
 
+Route::get('/cart', [App\Infrastructure\CartController::class, 'addItem']);
+
+Route::get('/order', [App\Infrastructure\OrderController::class, 'completeOrder']);

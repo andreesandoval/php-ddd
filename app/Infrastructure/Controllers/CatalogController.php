@@ -3,6 +3,7 @@
 namespace App\Infrastructure\Controllers;
 
 use App\Application\Ports\ICatalogService;
+use App\Application\Queries\GetAllProductsQuery;
 use Illuminate\Http\Request;
 
 class CatalogController extends Controller
@@ -17,6 +18,7 @@ class CatalogController extends Controller
 
     public function list(Request $request)
     {
-        return 'catalog';
+        $products = $this->catalogService->getAllProducts(new GetAllProductsQuery());
+        return response()->json($products, 200);
     }
 }

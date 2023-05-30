@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Infrastructure\Models\Product;
 use Illuminate\Database\Seeder;
 
-class CarritoSeeder extends Seeder
+class ProductSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,8 @@ class CarritoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Product::factory()
+            ->count(50)
+            ->create();
     }
 }

@@ -4,7 +4,7 @@ namespace App\Application\Commands;
 
 use App\Domain\Product;
 
-class AddItemToCartCommand
+readonly class AddItemToCartCommand
 {
 
     public Product $product;

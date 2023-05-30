@@ -2,6 +2,12 @@
 
 namespace App\Application\Queries;
 
-class GetAllProductsQuery
+readonly class GetAllProductsQuery
 {
+    public string $minimumPrice;
+
+    public function __construct(string $minimumPrice)
+    {
+        $this->minimumPrice = $minimumPrice;
+    }
 }

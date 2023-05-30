@@ -2,6 +2,6 @@
 
 namespace App\Application\Commands;
 
-class CompleteOrderCommand
+readonly class CompleteOrderCommand
 {
 }

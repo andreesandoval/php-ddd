@@ -18,6 +18,6 @@ class CatalogService implements ICatalogService
 
     public function getAllProducts(GetAllProductsQuery $getAllProductsQuery): array
     {
-        return $this->catalogRepository->getAllProducts();
+        return $this->catalogRepository->getAllProducts($getAllProductsQuery->minimumPrice);
     }
 }

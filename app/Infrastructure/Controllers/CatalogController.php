@@ -18,7 +18,10 @@ class CatalogController extends Controller
 
     public function list(Request $request)
     {
-        $products = $this->catalogService->getAllProducts(new GetAllProductsQuery());
+        $getAllProductsQuery = new GetAllProductsQuery(200);
+
+        $products = $this->catalogService->getAllProducts($getAllProductsQuery);
+
         return response()->json($products, 200);
     }
 }

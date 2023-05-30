@@ -2,6 +2,6 @@
 
 namespace App\Application\Commands;
 
-class DeleteItemFromCartCommand
+readonly class DeleteItemFromCartCommand
 {
 }

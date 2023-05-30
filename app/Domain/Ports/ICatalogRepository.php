@@ -7,5 +7,5 @@ use App\Domain\CartItem;
 
 interface ICatalogRepository
 {
-    public function getAllProducts(): array;
+    public function getAllProducts(float $priceFrom): array;
 }

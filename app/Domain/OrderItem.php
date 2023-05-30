@@ -1,11 +1,12 @@
 <?php
+
 namespace App\Domain;
 
-class OrderItem
+readonly class OrderItem
 {
 
     public string $productId;
-    
+
     public float $price;
 
     public int $quantity;
@@ -16,6 +17,4 @@ class OrderItem
         $this->price = $price;
         $this->quantity = $quantity;
     }
-
-
 }

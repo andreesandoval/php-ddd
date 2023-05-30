@@ -28,6 +28,8 @@ Route::get('/articulos2', [App\Http\Controllers\PagesController::class, 'art2'])
 Route::get('/articulos3', [App\Http\Controllers\PagesController::class, 'art3'])->name('articulos3');
 
 
-Route::get('/cart', [App\Infrastructure\CartController::class, 'addItem']);
+Route::get('/catalog', [App\Infrastructure\CatalogController::class, 'list']);
 
-Route::get('/order', [App\Infrastructure\OrderController::class, 'completeOrder']);
+Route::post('/cart', [App\Infrastructure\CartController::class, 'addItem']);
+
+Route::post('/order', [App\Infrastructure\OrderController::class, 'completeOrder']);

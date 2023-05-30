@@ -1,50 +1,61 @@
 <?php
+
 namespace App\Domain;
 
-class Cart
+readonly class Cart
 {
 
     public string $cartId;
 
     public string $userId;
 
-    public array $cartItems = [];
+    public array $cartItems;
 
-    public function add(CartItem $cartItem) {
+    public function __construct(string $cartId, string $userId, array $cartItems)
+    {
+        $this->cartId = $cartId;
+        $this->userId = $userId;
+        $this->cartItems = $cartItems;
+    }
+
+    public function add(CartItem $cartItem)
+    {
         $this->cartItems[] = $cartItem;
     }
 
-    public function update(CartItem $cartItem) {
+    public function update(CartItem $cartItem)
+    {
         foreach ($this->cartItems as $index => $itemInCart) {
             if ($itemInCart->productId === $cartItem->productId) {
                 $this->cartItems[$index] = $cartItem;
                 break;
-            }  
-        }    
+            }
+        }
     }
 
-    public function delete(CartItem $cartItem) {
+    public function delete(CartItem $cartItem)
+    {
         foreach ($this->cartItems as $index => $itemInCart) {
             if ($itemInCart->productId === $cartItem->productId) {
                 unset($this->cartItems[$index]);
                 break;
-            }  
-        }    
+            }
+        }
     }
 
-    public function countProducts() {
+    public function countProducts()
+    {
         return count($this->cartItems);
     }
 
-    public function countItems() {
+    public function countItems()
+    {
         $count = 0;
 
         foreach ($this->cartItems as $index => $itemInCart) {
             $count += $itemInCart->quantity;
-        }   
-        
+        }
+
         return $count;
     }
-
-
 }

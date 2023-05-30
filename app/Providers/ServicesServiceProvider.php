@@ -3,10 +3,13 @@
 namespace App\Providers;
 
 use App\Application\CartService;
+use App\Application\CatalogService;
 use App\Application\OrderService;
 use App\Application\Ports\ICartService;
+use App\Application\Ports\ICatalogService;
 use App\Application\Ports\IOrderService;
 use App\Domain\Ports\ICartRepository;
+use App\Domain\Ports\ICatalogRepository;
 use App\Domain\Ports\IOrderRepository;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
@@ -20,6 +23,11 @@ class ServicesServiceProvider extends ServiceProvider
      */
     public function register()
     {
+
+        $this->app->singleton(ICatalogService::class, function (Application $app) {
+            return new CatalogService($app->make(ICatalogRepository::class));
+        });
+
         $this->app->singleton(ICartService::class, function (Application $app) {
             return new CartService($app->make(ICartRepository::class));
         });

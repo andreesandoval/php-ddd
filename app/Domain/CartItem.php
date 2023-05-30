@@ -1,11 +1,12 @@
 <?php
+
 namespace App\Domain;
 
-class CartItem
+readonly class CartItem
 {
 
     public string $productId;
-    
+
     public float $price;
 
     public int $quantity;
@@ -16,6 +17,4 @@ class CartItem
         $this->price = $price;
         $this->quantity = $quantity;
     }
-
-
 }
